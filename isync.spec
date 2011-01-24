@@ -13,6 +13,7 @@ Patch0:		recursive_imap_ubuntu.patch
 BuildRequires:	db-devel
 BuildRequires:	iconv
 BuildRequires:	openssl-devel
+BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
