@@ -3,7 +3,7 @@
 Summary:	Tool to synchronize IMAP4 and Maildir mailboxes
 Name:		isync
 Version:	1.0.4
-Release:	2
+Release:	3
 License:	GPL v2+
 Group:		Applications/Networking
 URL:		http://isync.sourceforge.net/
