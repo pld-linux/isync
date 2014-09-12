@@ -2,16 +2,16 @@
 # - new name will be probably mbsync, but project name still stays isync
 Summary:	Tool to synchronize IMAP4 and Maildir mailboxes
 Name:		isync
-Version:	1.0.6
+Version:	1.1.1
 Release:	1
 License:	GPL v2+
 Group:		Applications/Networking
 URL:		http://isync.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/isync/%{name}-%{version}.tar.gz
-# Source0-md5:	18d2e3acb2fe6cae7233f7b5f6cc3292
-Patch0:		recursive_imap_ubuntu.patch
-BuildRequires:	db-devel
-BuildRequires:	iconv
+# Source0-md5:	3d5f8746dc039c4098c28d8002d2ccbd
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	db-devel >= 4.2
 BuildRequires:	openssl-devel
 BuildRequires:	pkgconfig
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -24,16 +24,12 @@ is suitable for use in IMAP-disconnected mode.
 
 %prep
 %setup -q
-%patch0 -p1
-
-# Convert to utf-8
-for file in ChangeLog; do
-	mv $file timestamp
-	iconv -f ISO-8859-1 -t UTF-8 -o $file timestamp
-	touch -r timestamp $file
-done
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 %{__make}
 
