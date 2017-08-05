@@ -2,13 +2,13 @@
 # - new name will be probably mbsync, but project name still stays isync
 Summary:	Tool to synchronize IMAP4 and Maildir mailboxes
 Name:		isync
-Version:	1.2.1
+Version:	1.2.2
 Release:	1
 License:	GPL v2+
 Group:		Applications/Networking
 URL:		http://isync.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/isync/%{name}-%{version}.tar.gz
-# Source0-md5:	7ba1a07c7b487a3ab5fef54d0071f1dd
+# Source0-md5:	f7b63f10dd6ab9c7d03d813cb6325a99
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	db-devel >= 4.2
