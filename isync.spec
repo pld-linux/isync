@@ -3,12 +3,13 @@
 Summary:	Tool to synchronize IMAP4 and Maildir mailboxes
 Name:		isync
 Version:	1.4.0
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		Applications/Networking
 URL:		http://isync.sourceforge.net/
 Source0:	http://downloads.sourceforge.net/isync/%{name}-%{version}.tar.gz
 # Source0-md5:	bf60773c0ec03f132aac546df9cc7b87
+Patch0:		unexpected_fetch_response.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	cyrus-sasl-devel
@@ -27,6 +28,7 @@ is suitable for use in IMAP-disconnected mode.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__aclocal}
